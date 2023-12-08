@@ -13,3 +13,13 @@ it('should return the correct component', function () {
         );
 
 });
+
+it('passes post to the view component', function () {
+
+    get(route('posts.index'))
+        ->assertInertia(
+            fn (AssertableInertia $inertia) => $inertia
+                ->component('Posts/Index', true)
+        );
+
+});
